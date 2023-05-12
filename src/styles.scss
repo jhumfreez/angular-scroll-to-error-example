@@ -1,0 +1,5 @@
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+$my-palette: mat.$indigo-palette;
+
+// For more pre-built themes: https://github.com/angular/components/tree/main/src/material/core/theming/prebuilt

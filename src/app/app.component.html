@@ -1,0 +1,25 @@
+<hello name="{{ name }}"></hello>
+<form [formGroup]="myForm" scrollToError>
+  <ng-container formArrayName="options">
+    <mat-form-field *ngFor="let control of options.controls; index as i">
+      <mat-label for="">Enter your favorite animal</mat-label>
+      <input id="" matInput [formControlName]="i" />
+      <mat-hint>Ex. Dog</mat-hint>
+      <mat-error *ngIf="control.errors && control.touched">INVALID</mat-error>
+    </mat-form-field>
+  </ng-container>
+  <!-- TODO: Currently driven by submit event, so button is tightly coupled to form. Consider separation. -->
+  <button
+    #submitBtn
+    type="submit"
+    mat-raised-button
+    color="primary"
+    (click)="submit()"
+  >
+    Submit
+  </button>
+</form>
+<button mat-raised-button color="accent" (click)="partAutofill()">
+  Partial Autofill
+</button>
+<button mat-raised-button color="accent" (click)="reset()">Reset</button>
